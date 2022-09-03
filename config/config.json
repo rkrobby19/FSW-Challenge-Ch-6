@@ -1,0 +1,23 @@
+{
+    "development": {
+        "username": "robby19",
+        "password": "@Robby19",
+        "database": "challenge-chapter-6",
+        "host": "127.0.0.1",
+        "dialect": "postgres"
+    },
+    "test": {
+        "username": "robby19",
+        "password": "@Robby19",
+        "database": "challenge-chapter-6",
+        "host": "127.0.0.1",
+        "dialect": "postgres"
+    },
+    "production": {
+        "username": "robby19",
+        "password": "@Robby19",
+        "database": "challenge-chapter-6",
+        "host": "127.0.0.1",
+        "dialect": "postgres"
+    }
+}
