@@ -43,16 +43,20 @@ app.get("/users/:id/user-profile", async (req, res) => {
     const userBiodata = await fetch(
         `http://localhost:8000/users/${req.params.id}/biodata`
     );
-    // const userGameHistory = await fetch(
-    //     `http://localhost:8000/users/${req.params.id}/game-history`
-    // );
+    const userGameHistory = await fetch(
+        `http://localhost:8000/users/${req.params.id}/game-history`
+    );
     const user = await userData.json();
     const biodata = await userBiodata.json();
-    // const gameHistory = await userGameHistory.json();
-    console.log(user);
-    console.log(biodata);
+    const gameHistory = await userGameHistory.json();
+    // console.log(user);
+    // console.log(biodata);
     // console.log(gameHistory);
-    res.render("user-profile", { userData: user, userBiodata: biodata });
+    res.render("user-profile", {
+        userData: user,
+        userBiodata: biodata,
+        userGameHistory: gameHistory,
+    });
 });
 
 app.get("/users/:id/edit-profile", async (req, res) => {
@@ -64,14 +68,24 @@ app.get("/users/:id/edit-profile", async (req, res) => {
     );
     const user = await userData.json();
     const biodata = await userBiodata.json();
-    const location = __dirname;
-    console.log(user);
-    console.log(biodata);
+    // console.log(user);
+    // console.log(biodata);
     res.render("edit-profile", { userData: user, userBiodata: biodata });
 });
 
-app.get("/users/:id/user-game-history", (req, res) => {
-    res.render("game-history");
+app.get("/users/:id/user-game-history", async (req, res) => {
+    const userData = await fetch(
+        `http://localhost:8000/users/${req.params.id}`
+    );
+    const data = await fetch(
+        `http://localhost:8000/users/${req.params.id}/game-history`
+    );
+    const user = await userData.json();
+    const userGameHistory = await data.json();
+
+    console.log(userGameHistory);
+
+    res.render("game-history", { user: user, gameHistory: userGameHistory });
 });
 
 // ! === API ====
@@ -246,7 +260,7 @@ app.delete("/users/:id/biodata", async (req, res) => {
 app.delete("/users/:id/game-history", async (req, res) => {
     try {
         let data = await UserGameHistory.findOne({
-            where: { UserId: req.params.id },
+            where: { id: req.params.id },
         });
         data.destroy();
         res.status(202).send(data);

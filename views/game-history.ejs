@@ -83,20 +83,15 @@
                 <div class="col-md-4 border-right">
                     <div class="card">
                         <div class="card-header">
-                            <span>Add New Game History</span>
-                            <button
-                                id="savebutton"
-                                class="btn btn-primary profile-button"
-                                type="button"
-                            >
-                                <i class="fa-solid fa-circle-plus"></i>
-                            </button>
+                            <h2 class="font-weight-bold" ><%= user.userName %></h2>
+                            <span> Game History</span>
                         </div>
                         <div class="forms">
                             <div class="inputs">
                                 <span>Date</span>
                                 <input
                                     type="text"
+                                    id="inputDate"
                                     placeholder="yyyy-mm-dd"
                                     value=""
                                 />
@@ -105,6 +100,7 @@
                                 <span>Play Time</span>
                                 <input
                                     type="number"
+                                    id="inputPlaytime"
                                     placeholder="(minutes)"
                                     value=""
                                 />
@@ -113,10 +109,19 @@
                                 <span>Points</span>
                                 <input
                                     type="number"
+                                    id="inputPoints"
                                     placeholder="input points"
                                     value=""
                                 />
                             </div>
+                            <button
+                                id="savebutton"
+                                class="btn btn-primary profile-button"
+                                type="button"
+                                onclick="addGameHistory(<%= user.id %>)"
+                            >
+                                Add History  <i class="fa-solid fa-circle-plus"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -144,51 +149,48 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <% for (let i = 0; i<gameHistory.length; i++) { %>
                             <tr class="border-bottom text-center">
                                 <td>
                                     <div class="p-2">
-                                        <span class="font-weight-bold">1</span>
+                                        <span class="font-weight-bold"><%= i %></span>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="p-2">
                                         <span class="font-weight-bold"
-                                            >username</span
+                                            ><%= gameHistory[i].date %></span
                                         >
                                     </div>
                                 </td>
                                 <td>
                                     <div class="p-2">
                                         <span class="font-weight-bold"
-                                            >Email</span
+                                            ><%= gameHistory[i].playTime %></span
                                         >
                                     </div>
                                 </td>
                                 <td>
                                     <div class="p-2">
                                         <span class="font-weight-bold"
-                                            >7000</span
+                                            ><%= gameHistory[i].exp%></span
                                         >
                                     </div>
                                 </td>
                                 <td>
                                     <div class="p-2 icons">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-                                                <a href="#">
-                                                    <i
-                                                        class="fa fa-trash text-danger"
-                                                    ></i>
-                                                </a>
-                                            </li>
-                                        </ul>
+                                        <button class="btn" onclick="deleteHandler(<%= gameHistory[i].id %>)"><i
+                                            class="fa fa-trash text-danger"
+                                        ></i></button>
                                     </div>
                                 </td>
                             </tr>
+                            <% } %>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
+        <script src="../../public/assets/javascripts/game-history.js"></script>
     </body>
 </html>

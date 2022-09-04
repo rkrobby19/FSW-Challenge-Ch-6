@@ -127,7 +127,7 @@
                                         <h6>Game History</h6>
                                     </div>
                                     <div class="col-sm-6">
-                                        <a target="__blank" href="#"
+                                        <a target="__blank" href="/users/<%= userData.id %> /user-game-history"
                                             >Edit
                                             <i class="fa-solid fa-pencil"></i
                                         ></a>
@@ -143,12 +143,15 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <% for (let i = 0; i<userGameHistory.length; i++) { %> 
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>2022-05-06</td>
-                                            <td>75</td>
-                                            <td>5600</td>
+                                            <th scope="row"><%= i %> </th>
+                                            <td><%= userGameHistory[i].date %></td>
+                                            <td><%= userGameHistory[i].playTime %></td>
+                                            <td><%= userGameHistory[i].exp %> </td>
                                         </tr>
+                                        <% } %>
+                                            
                                     </tbody>
                                 </table>
                             </div>

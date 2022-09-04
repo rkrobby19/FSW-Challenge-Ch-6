@@ -73,24 +73,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% users.forEach(user => { %>
+                    <% for (let i = 0; i<users.length; i++) { %>
                     <tr class="border-bottom text-center">
                         <td>
                             <div class="p-2">
-                                <span class="font-weight-bold">1</span>
+                                <span class="font-weight-bold"><%= i %> </span>
                             </div>
                         </td>
                         <td>
                             <div class="p-2">
                                 <span class="font-weight-bold"
-                                    ><%= user.userName %></span
+                                    ><%= users[i].userName %></span
                                 >
                             </div>
                         </td>
                         <td>
                             <div class="p-2">
                                 <span class="font-weight-bold"
-                                    ><%= user.email %></span
+                                    ><%= users[i].email %></span
                                 >
                             </div>
                         </td>
@@ -99,7 +99,7 @@
                                 <ul class="list-inline">
                                     <li class="list-inline-item">
                                         <a
-                                            href="/users/<%= user.id %>/user-profile"
+                                            href="/users/<%= users[i].id %>/user-profile"
                                         >
                                             <i
                                                 class="fa-solid fa-circle-info"
@@ -108,7 +108,7 @@
                                     </li>
                                     <li class="list-inline-item">
                                         <!-- TODO: edit the href button to connect API -->
-                                        <a href="#">
+                                        <a href="#" onclick="deleteAllDataHandler(<%= users[i].id %>)">
                                             <i
                                                 class="fa fa-trash text-danger"
                                             ></i>
@@ -118,9 +118,10 @@
                             </div>
                         </td>
                     </tr>
-                    <% }) %>
+                    <% } %>
                 </tbody>
             </table>
         </div>
+        <script src="../../public/assets/javascripts/dashboard.js"></script>
     </body>
 </html>
