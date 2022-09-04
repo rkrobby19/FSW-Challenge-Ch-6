@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Edit Profile</title>
+        <title>Edit User Profile</title>
         <!-- ! Bootstrap CSS only -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
@@ -77,8 +77,9 @@
                             class="rounded-circle mt-5"
                             width="150px"
                             src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
-                        /><span class="font-weight-bold">Edogaru</span
-                        ><span class="text-black-50">edogaru@mail.com.my</span
+                        /><span class="font-weight-bold"
+                            ><%= userData.userName %></span
+                        ><span class="text-black-50"><%= userData.email %></span
                         ><span> </span>
                     </div>
                 </div>
@@ -87,7 +88,7 @@
                         <div
                             class="d-flex justify-content-between align-items-center mb-3"
                         >
-                            <h4 class="text-right">Profile Settings</h4>
+                            <h4 class="text-right">Edit User Profile</h4>
                         </div>
                         <div class="row mt-3">
                             <form>
@@ -104,7 +105,8 @@
                                         type="text"
                                         placeholder="Enter your username"
                                         name="username"
-                                        value=""
+                                        value="<%= userData.userName %>"
+                                        disabled
                                     />
                                 </div>
                                 <!-- Form Row-->
@@ -122,7 +124,7 @@
                                             type="text"
                                             placeholder="Enter your first name"
                                             name="firstName"
-                                            value=""
+                                            value="<%= userBiodata.firstName %>"
                                         />
                                     </div>
                                     <!-- Form Group (last name)-->
@@ -138,7 +140,7 @@
                                             type="text"
                                             placeholder="Enter your last name"
                                             name="lastName"
-                                            value=""
+                                            value="<%= userBiodata.lastName %>"
                                         />
                                     </div>
                                 </div>
@@ -157,7 +159,7 @@
                                             type="text"
                                             name="birthday"
                                             placeholder="yyyy-mm-dd"
-                                            value=""
+                                            value="<%= userBiodata.birthday %>"
                                         />
                                     </div>
                                     <!-- Form Group (location)-->
@@ -173,7 +175,7 @@
                                             type="text"
                                             placeholder="San Francisco, CA"
                                             name="location"
-                                            value=""
+                                            value="<%= userBiodata.location %>"
                                         />
                                     </div>
                                 </div>
@@ -192,7 +194,8 @@
                                             id="inputEmail"
                                             type="email"
                                             placeholder="name@example.com"
-                                            value=""
+                                            value="<%= userData.email %>"
+                                            disabled
                                         />
                                     </div>
                                     <!-- Form Group (gender)-->
@@ -208,7 +211,7 @@
                                             type="text"
                                             name="gender"
                                             placeholder="Male/Female"
-                                            value=""
+                                            value="<%= userBiodata.gender %>"
                                         />
                                     </div>
                                 </div>
@@ -223,7 +226,7 @@
                                         type="text"
                                         placeholder="085xxxxxxxxx"
                                         name="phone"
-                                        value=""
+                                        value="<%= userBiodata.phone %>"
                                     />
                                 </div>
                                 <!-- Form Group (password)-->
@@ -239,13 +242,15 @@
                                         type="password"
                                         placeholder="Enter your password"
                                         name="password"
-                                        value=""
+                                        value="<%= userData.password %>"
+                                        disabled
                                     />
                                 </div>
                                 <div class="mt-5 text-center">
                                     <button
                                         class="btn btn-primary profile-button"
                                         type="button"
+                                        onclick="editUserProfile(<%= userData.id %>)"
                                     >
                                         Save Profile
                                     </button>
@@ -256,5 +261,6 @@
                 </div>
             </div>
         </div>
+        <script src="../../public/assets/javascripts/edit-profile.js"></script>
     </body>
 </html>

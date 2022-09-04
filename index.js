@@ -25,23 +25,52 @@ app.get("/login", (req, res) => {
     res.render("login");
 });
 
-app.get("/dashboard", (req, res) => {
-    res.render("dashboard");
+app.get("/dashboard", async (req, res) => {
+    const usersData = await fetch("http://localhost:8000/users");
+    const data = await usersData.json();
+    console.log(data);
+    res.render("dashboard", { users: data });
 });
 
 app.get("/create-user", (req, res) => {
     res.render("create-user");
 });
 
-app.get("/users/:id/user-profile", (req, res) => {
-    res.render("user-profile");
+app.get("/users/:id/user-profile", async (req, res) => {
+    const userData = await fetch(
+        `http://localhost:8000/users/${req.params.id}`
+    );
+    const userBiodata = await fetch(
+        `http://localhost:8000/users/${req.params.id}/biodata`
+    );
+    // const userGameHistory = await fetch(
+    //     `http://localhost:8000/users/${req.params.id}/game-history`
+    // );
+    const user = await userData.json();
+    const biodata = await userBiodata.json();
+    // const gameHistory = await userGameHistory.json();
+    console.log(user);
+    console.log(biodata);
+    // console.log(gameHistory);
+    res.render("user-profile", { userData: user, userBiodata: biodata });
 });
 
-app.get("/users/:id/edit-profile", (req, res) => {
-    res.render("edit-profile");
+app.get("/users/:id/edit-profile", async (req, res) => {
+    const userData = await fetch(
+        `http://localhost:8000/users/${req.params.id}`
+    );
+    const userBiodata = await fetch(
+        `http://localhost:8000/users/${req.params.id}/biodata`
+    );
+    const user = await userData.json();
+    const biodata = await userBiodata.json();
+    const location = __dirname;
+    console.log(user);
+    console.log(biodata);
+    res.render("edit-profile", { userData: user, userBiodata: biodata });
 });
 
-app.get("/users/:id/game-history", (req, res) => {
+app.get("/users/:id/user-game-history", (req, res) => {
     res.render("game-history");
 });
 
@@ -112,7 +141,11 @@ app.get("/users/:id", async (req, res) => {
         let data = await User.findOne({
             where: { id: req.params.id },
         });
-        res.send(data);
+        if (data != null) {
+            res.send(data);
+        } else {
+            res.status(404).send(`User not found`);
+        }
     } catch (error) {
         console.log(error);
         res.send(`error`);
@@ -124,7 +157,11 @@ app.get("/users/:id/biodata", async (req, res) => {
         let data = await UserBiodata.findOne({
             where: { UserId: req.params.id },
         });
-        res.send(data);
+        if (data != null) {
+            res.send(data);
+        } else {
+            res.status(404).send(`User not found`);
+        }
     } catch (error) {
         console.log(error);
         res.send(`error`);
@@ -157,7 +194,7 @@ app.put("/users/:id/biodata", jsonParser, async (req, res) => {
             (data.birthday = req.body.birthday),
             (data.location = req.body.location),
             await data.save();
-        res.status(201).send(data);
+        res.status(202).send(data);
     } catch (error) {
         console.log(error);
         res.send(`error`);
@@ -173,7 +210,7 @@ app.put("/users/:id/game-history", jsonParser, async (req, res) => {
             (data.playTime = req.body.playTime),
             (data.exp = req.body.exp),
             await data.save();
-        res.status(201).send(data);
+        res.status(202).send(data);
     } catch (error) {
         console.log(error);
         res.send(`cant register user`);
