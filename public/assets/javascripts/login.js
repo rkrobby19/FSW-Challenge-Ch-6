@@ -17,6 +17,6 @@ const login = async () => {
         alert("Wrong email or password for Admin");
     } else {
         alert("You are authorized");
-        window.location.href("/dashboard");
+        window.location.href = "/dashboard";
     }
 };

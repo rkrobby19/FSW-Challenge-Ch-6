@@ -65,7 +65,7 @@ app.post("/login", jsonParser, (req, res) => {
 app.post("/users", jsonParser, async (req, res) => {
     try {
         let dataUser = await User.create({
-            userName: req.body.username,
+            userName: req.body.userName,
             email: req.body.email,
             password: req.body.password,
         });
@@ -78,10 +78,10 @@ app.post("/users", jsonParser, async (req, res) => {
             location: req.body.location,
             UserId: dataUser.id,
         });
-        res.status(201).send("User succesfully created");
+        res.status(201).send(`User succesfully created`);
     } catch (error) {
         console.log(error);
-        res.send(`cant register user`);
+        res.status(422).send(`Cant register user`);
     }
 });
 // * create user game history
@@ -96,7 +96,7 @@ app.post("/users/:id/game-history", jsonParser, async (req, res) => {
         res.status(201).send(data);
     } catch (error) {
         console.log(error);
-        res.send(`cant register user`);
+        res.status(422).send(`cant create user game history`);
     }
 });
 
