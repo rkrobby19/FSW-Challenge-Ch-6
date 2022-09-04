@@ -1,3 +1,4 @@
+const fs = require("fs");
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
@@ -13,10 +14,15 @@ const jsonParser = bodyParser.json();
 app.set("view engine", "ejs");
 
 app.use("/public", express.static(__dirname + "/public"));
+app.use("/utils", express.static(__dirname + "/utils"));
 
 // ! === VIEW RENDER ===
 app.get("/", (req, res) => {
     res.send(`Hello World`);
+});
+
+app.get("/login", (req, res) => {
+    res.render("login");
 });
 
 app.get("/dashboard", (req, res) => {
@@ -42,6 +48,19 @@ app.get("/users/:id/game-history", (req, res) => {
 // ! === API ====
 
 // ! CREATE
+// * admin login
+app.post("/login", jsonParser, (req, res) => {
+    let reqUserEmail = req.body.email;
+    let reqUserPass = req.body.password;
+
+    let dataAdmin = JSON.parse(fs.readFileSync("./utils/admin.json", "utf-8"));
+
+    if (reqUserEmail == dataAdmin.email && reqUserPass == dataAdmin.password) {
+        res.send(`Welcome Admin`);
+    } else {
+        res.status(401).send(`Wrong email or password for Admin`);
+    }
+});
 // * create user and biodata
 app.post("/users", jsonParser, async (req, res) => {
     try {
