@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard</title>
+        <!-- ! Bootstrap CSS only -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+            crossorigin="anonymous"
+        />
+        <!-- ! Font Awesome Icon -->
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v6.1.2/css/all.css"
+            integrity="sha384-fZCoUih8XsaUZnNDOiLqnby1tMJ0sE7oBbNk2Xxf5x8Z4SvNQ9j83vFMa/erbVrV"
+            crossorigin="anonymous"
+        />
+    </head>
+    <style>
+        body {
+            background-color: #b3e5fc;
+        }
+
+        button {
+            margin-bottom: 1rem;
+        }
+
+        .register a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .card-1 {
+            border: none;
+            border-radius: 10px;
+            width: 100%;
+            background-color: #fff;
+        }
+
+        .icons i {
+            margin-left: 20px;
+        }
+    </style>
+    <body>
+        <div class="container mt-5">
+            <button class="btn btn-primary register" type="button">
+                <a href="#"
+                    ><i class="fa-solid fa-circle-plus"></i> Add New User</a
+                >
+            </button>
+            <br />
+            <table
+                class="table table-striped table-hover table-borderless table-responsive card-1 p-4"
+            >
+                <thead>
+                    <tr class="border-bottom text-center">
+                        <th>
+                            <span class="ml-2">#</span>
+                        </th>
+                        <th>
+                            <span class="ml-2">Username</span>
+                        </th>
+                        <th>
+                            <span class="ml-2">Email</span>
+                        </th>
+                        <th>
+                            <span class="ml-4">Action</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-bottom text-center">
+                        <td>
+                            <div class="p-2">
+                                <span class="font-weight-bold">1</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="p-2">
+                                <span class="font-weight-bold">username</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="p-2">
+                                <span class="font-weight-bold">Email</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="p-2 icons">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <a href="#">
+                                            <i
+                                                class="fa-solid fa-circle-info"
+                                            ></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">
+                                            <i
+                                                class="fa fa-trash text-danger"
+                                            ></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

@@ -14,9 +14,29 @@ app.set("view engine", "ejs");
 
 app.use("/public", express.static(__dirname + "/public"));
 
-// ! VIEW RENDER
+// ! === VIEW RENDER ===
 app.get("/", (req, res) => {
     res.send(`Hello World`);
+});
+
+app.get("/dashboard", (req, res) => {
+    res.render("dashboard");
+});
+
+app.get("/create-user", (req, res) => {
+    res.render("create-user");
+});
+
+app.get("/users/:id/user-profile", (req, res) => {
+    res.render("user-profile");
+});
+
+app.get("/users/:id/edit-profile", (req, res) => {
+    res.render("edit-profile");
+});
+
+app.get("/users/:id/game-history", (req, res) => {
+    res.render("game-history");
 });
 
 // ! === API ====
