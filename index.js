@@ -4,89 +4,31 @@ const app = express();
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const chalk = require("chalk");
+
 // ! import models
 const { User, UserBiodata, UserGameHistory } = require("./models");
+
+// ! Middleware
+const request = require("./middleware/request");
+
+// ! Routes
+const views = require("./routes/index");
 
 const PORT = 8000;
 
 const jsonParser = bodyParser.json();
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
 
 app.use("/public", express.static(__dirname + "/public"));
 app.use("/utils", express.static(__dirname + "/utils"));
 
+// ! Middleware
+app.use(request);
+
 // ! === VIEW RENDER ===
-app.get("/", (req, res) => {
-    res.send(`Hello World`);
-});
-
-app.get("/login", (req, res) => {
-    res.render("login");
-});
-
-app.get("/dashboard", async (req, res) => {
-    const usersData = await fetch("http://localhost:8000/users");
-    const data = await usersData.json();
-    console.log(data);
-    res.render("dashboard", { users: data });
-});
-
-app.get("/create-user", (req, res) => {
-    res.render("create-user");
-});
-
-app.get("/users/:id/user-profile", async (req, res) => {
-    const userData = await fetch(
-        `http://localhost:8000/users/${req.params.id}`
-    );
-    const userBiodata = await fetch(
-        `http://localhost:8000/users/${req.params.id}/biodata`
-    );
-    const userGameHistory = await fetch(
-        `http://localhost:8000/users/${req.params.id}/game-history`
-    );
-    const user = await userData.json();
-    const biodata = await userBiodata.json();
-    const gameHistory = await userGameHistory.json();
-    // console.log(user);
-    // console.log(biodata);
-    // console.log(gameHistory);
-    res.render("user-profile", {
-        userData: user,
-        userBiodata: biodata,
-        userGameHistory: gameHistory,
-    });
-});
-
-app.get("/users/:id/edit-profile", async (req, res) => {
-    const userData = await fetch(
-        `http://localhost:8000/users/${req.params.id}`
-    );
-    const userBiodata = await fetch(
-        `http://localhost:8000/users/${req.params.id}/biodata`
-    );
-    const user = await userData.json();
-    const biodata = await userBiodata.json();
-    // console.log(user);
-    // console.log(biodata);
-    res.render("edit-profile", { userData: user, userBiodata: biodata });
-});
-
-app.get("/users/:id/user-game-history", async (req, res) => {
-    const userData = await fetch(
-        `http://localhost:8000/users/${req.params.id}`
-    );
-    const data = await fetch(
-        `http://localhost:8000/users/${req.params.id}/game-history`
-    );
-    const user = await userData.json();
-    const userGameHistory = await data.json();
-
-    console.log(userGameHistory);
-
-    res.render("game-history", { user: user, gameHistory: userGameHistory });
-});
+app.use(views);
 
 // ! === API ====
 

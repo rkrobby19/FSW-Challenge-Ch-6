@@ -1,82 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Game History</title>
-        <!-- ! Bootstrap CSS only -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
-            crossorigin="anonymous"
-        />
-        <!-- ! Font Awesome Icon -->
-        <link
-            rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v6.1.2/css/all.css"
-            integrity="sha384-fZCoUih8XsaUZnNDOiLqnby1tMJ0sE7oBbNk2Xxf5x8Z4SvNQ9j83vFMa/erbVrV"
-            crossorigin="anonymous"
-        />
-    </head>
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-        * {
-            padding: 0;
-            margin: 0;
-            font-family: "Poppins", sans-serif;
-        }
-        body {
-            background-color: #b3e5fc;
-        }
-        .card {
-            width: 350px;
-            height: 470px;
-            background-color: #fff;
-            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .card .info {
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid #e1dede;
-            background-color: #e5e5e5;
-        }
-        .card .info button {
-            height: 30px;
-            width: 80px;
-            border: none;
-            color: #fff;
-            border-radius: 4px;
-            background-color: #000;
-            cursor: pointer;
-            text-transform: uppercase;
-        }
-        .card .forms {
-            padding: 15px;
-        }
-        .card .inputs {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 10px;
-        }
-        .card .inputs span {
-            font-size: 12px;
-        }
-        .card .inputs input {
-            height: 40px;
-            padding: 0px 10px;
-            font-size: 17px;
-            box-shadow: none;
-            outline: none;
-        }
-        .card .inputs input[type="text"][readonly] {
-            border: 2px solid rgba(0, 0, 0, 0);
-        }
-    </style>
+    <%- include('partials/head') %>
+    
     <body>
         <div class="container rounded mt-5 mb-5">
             <div class="row">
@@ -179,9 +104,9 @@
                                 </td>
                                 <td>
                                     <div class="p-2 icons">
-                                        <button class="btn" onclick="deleteHandler(<%= gameHistory[i].id %>)"><i
+                                        <i onclick="deleteHandler(<%= gameHistory[i].id %>)"
                                             class="fa fa-trash text-danger"
-                                        ></i></button>
+                                        ></i>
                                     </div>
                                 </td>
                             </tr>
@@ -191,6 +116,6 @@
                 </div>
             </div>
         </div>
-        <script src="../../public/assets/javascripts/game-history.js"></script>
+        <%- include('partials/script') %>    
     </body>
 </html>

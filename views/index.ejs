@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+
+    <body>
+        <!-- ! main cta section -->
+        <section id="main-cta" class="main-cta">
+            <nav class="navbar navbar-dark navbar-expand-lg">
+                <div class="container-fluid my-text-nav fw-bold">
+                    <a class="navbar-brand logo" href="#">Logo</a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="collapse navbar-collapse justify-content-around"
+                        id="navbarNav"
+                    >
+                        <div class="my-nav-menu">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link"
+                                        aria-current="page"
+                                        href="#"
+                                        >Home</a
+                                    >
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Work</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">About-Me</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="my-sign-menu">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Sign Up</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="login">Login</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <main>
+                <div class="text-area">
+                    <h1 class="fw-bold text-center">Play traditional game</h1>
+                    <h3 class="text-center">
+                        Experience new traditional game play
+                    </h3>
+                    <button
+                        type="button"
+                        class="btn fw-bold btn-lg text-btn text-uppercase"
+                    >
+                        <a href="/the-game">Play Now</a>
+                    </button>
+                </div>
+            </main>
+            <footer>
+                <p class="text-center my-text-nav fw-bold">
+                    The Story <br />
+                    <a href="#"
+                        ><img
+                            src="../public/assets/images/scroll-down.svg"
+                            alt="down-arrow"
+                    /></a>
+                </p>
+            </footer>
+        </section>
+        <!-- ! end main cta section -->
+
+        <!-- ! about-gallery section -->
+        <section
+            id="gallery"
+            class="about-gallery-options d-flex justify-content-center align-items-center"
+        >
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 text-area">
+                        <h3>What's so special?</h3>
+                        <h1 class="fw-bold">the games</h1>
+                    </div>
+                    <div class="col-lg-9 d-flex justify-content-center">
+                        <div class="carousel-container">
+                            <div
+                                id="my-carousel"
+                                class="carousel slide"
+                                data-bs-ride="true"
+                            >
+                                <div class="carousel-indicators">
+                                    <button
+                                        type="button"
+                                        data-bs-target="#my-carousel"
+                                        data-bs-slide-to="0"
+                                        class="active"
+                                        aria-current="true"
+                                        aria-label="Slide 1"
+                                    ></button>
+                                    <button
+                                        type="button"
+                                        data-bs-target="#my-carousel"
+                                        data-bs-slide-to="1"
+                                        aria-label="Slide 2"
+                                    ></button>
+                                    <button
+                                        type="button"
+                                        data-bs-target="#my-carousel"
+                                        data-bs-slide-to="2"
+                                        aria-label="Slide 3"
+                                    ></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img
+                                            src="../public/assets/images/rockpaperstrategy-1600.jpg"
+                                            class="d-block w-100"
+                                            alt="rock-paper-strategy"
+                                        />
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img
+                                            src="../public/assets/images/rockpaperstrategy-1600.jpg"
+                                            class="d-block w-100"
+                                            alt="..."
+                                        />
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img
+                                            src="../public/assets/images/rockpaperstrategy-1600.jpg"
+                                            class="d-block w-100"
+                                            alt="..."
+                                        />
+                                    </div>
+                                </div>
+                                <button
+                                    class="carousel-control-prev my-switch-left"
+                                    type="button"
+                                    data-bs-target="#my-carousel"
+                                    data-bs-slide="prev"
+                                >
+                                    <img
+                                        src="../public/assets/images/switch-left.svg"
+                                        alt=""
+                                    />
+                                </button>
+                                <button
+                                    class="carousel-control-next my-switch-right"
+                                    type="button"
+                                    data-bs-target="#my-carousel"
+                                    data-bs-slide="next"
+                                >
+                                    <img
+                                        src="../public/assets/images/switch-right.svg"
+                                        alt=""
+                                    />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ! end about-gallery section -->
+
+        <!-- ! features section -->
+        <section id="features" class="features">
+            <main>
+                <h3>What's so special?</h3>
+                <h1>features</h1>
+
+                <div class="feature-area">
+                    <button class="accordion">
+                        <h3 class="my-text-orange">
+                            <img
+                                src="../public/assets/images/ellipse-outline.svg"
+                                alt=""
+                            />traditional games
+                        </h3>
+                    </button>
+                    <div class="panel">
+                        <p class="text-capitalize">
+                            if you miss your childhood we provide many
+                            traditional game here
+                        </p>
+                    </div>
+
+                    <button class="accordion">
+                        <h3 class="my-text-orange">
+                            <img
+                                src="../public/assets/images/ellipse-outline.svg"
+                                alt=""
+                            />game suit
+                        </h3>
+                    </button>
+                    <div class="panel">
+                        <p class="text-capitalize">Lorem ipsum...</p>
+                    </div>
+
+                    <button class="accordion">
+                        <h3 class="my-text-orange">
+                            <img
+                                src="../public/assets/images/ellipse-outline.svg"
+                                alt=""
+                            />tbd
+                        </h3>
+                    </button>
+                    <div class="panel">
+                        <p class="text-capitalize">Lorem ipsum...</p>
+                    </div>
+                </div>
+            </main>
+        </section>
+        <!-- ! end features section -->
+
+        <!-- ! syst req section -->
+        <section id="syst-req" class="syst-req d-flex align-items-center">
+            <div class="container-lg">
+                <h3 class="text-center">can my computer run this game?</h3>
+                <div class="table-container">
+                    <h1>system requirements</h1>
+                    <table
+                        class="table table-bordered text-capitalize text-start"
+                    >
+                        <tr>
+                            <td>
+                                <h3>OS:</h3>
+                                <p>
+                                    Windows 7 64-bit only <br />
+                                    (No OSX support at this time
+                                </p>
+                            </td>
+                            <td>
+                                <h3>Processor:</h3>
+                                <p>
+                                    Intel Core 2 Duo @2.4 GHZ or <br />
+                                    AMD Athlon x2 @2.8 GHZ
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h3>memory:</h3>
+                                <p>4 GB RAM</p>
+                            </td>
+                            <td>
+                                <h3>storage:</h3>
+                                <p>8 GB available space</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <h3>Graphics:</h3>
+                                <p>
+                                    NVIDIA GeForce GTX 660 2GB or <br />
+                                    AMD Radeon HD 7850 2GB Directx11 (Shader
+                                    Model 5)
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <!-- ! end syst req section -->
+
+        <!-- ! press quotes section -->
+        <section
+            id="press-quotes"
+            class="press-quotes d-flex justify-content-center align-items-center"
+        >
+            <div class="container-lg">
+                <div class="row">
+                    <div
+                        class="col-lg text-area d-flex flex-column justify-content-center"
+                    >
+                        <div class="text-area">
+                            <h1>top scores</h1>
+                            <p>
+                                This top score from various games provided on
+                                this platform
+                            </p>
+                            <p>
+                                <button
+                                    href="#"
+                                    class="btn fw-bold btn-lg my-text-btn"
+                                >
+                                    see more
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg">
+                        <div class="card c-one">
+                            <div class="d-flex align-items-center header">
+                                <div class="img-container flex-shrink-0">
+                                    <img
+                                        src="../public/assets/images/evan-lahti.jpg"
+                                        alt="..."
+                                    />
+                                </div>
+                                <div class="flex-grow-1 ms-3 name lh-1">
+                                    <h3 class="name my-text-orange">
+                                        evan lahti <br />
+                                        <span class="my-text-grey my-text-sub"
+                                            >PC Gamer</span
+                                        >
+                                    </h3>
+                                </div>
+                                <img
+                                    src="../public/assets/images/twitter-card.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="body">
+                                <q> One of my gaming highlight of the year </q>
+                                <p class="date my-text-sub my-text-grey">
+                                    June 18, 2021
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="d-flex align-items-center header">
+                                <div class="img-container flex-shrink-0">
+                                    <img
+                                        src="../public/assets/images/jada-griffin.jpg"
+                                        alt="..."
+                                    />
+                                </div>
+                                <div class="flex-grow-1 ms-3 name">
+                                    <h3 class="name my-text-orange lh-1">
+                                        Jada Griffin <br />
+                                        <span class="my-text-grey my-text-sub"
+                                            >Nerdreactor</span
+                                        >
+                                    </h3>
+                                </div>
+                                <img
+                                    src="../public/assets/images/twitter-card.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="body">
+                                <q>
+                                    The next big thing in the world of streaming
+                                    and survival games
+                                </q>
+                                <p class="date my-text-sub my-text-grey">
+                                    July 10, 2021
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="card c-two">
+                            <div class="d-flex align-items-center header">
+                                <div class="img-container flex-shrink-0">
+                                    <img
+                                        src="../public/assets/images/aaron-williams.jpg"
+                                        alt="..."
+                                    />
+                                </div>
+                                <div class="flex-grow-1 ms-3 name">
+                                    <h3 class="name my-text-orange lh-1">
+                                        aaron williams <br />
+                                        <span class="my-text-grey my-text-sub"
+                                            >Uproxx</span
+                                        >
+                                    </h3>
+                                </div>
+                                <img
+                                    src="../public/assets/images/twitter-card.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="body">
+                                <q>
+                                    Snoop Dogg playing the wildly entertaining
+                                    'SOS' is ridiculous
+                                </q>
+                                <p class="date my-text-sub my-text-grey">
+                                    December 24, 2018
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ! end press quotes section -->
+
+        <!-- ! subscribe section -->
+        <section
+            id="subscribe"
+            class="subscribe d-flex align-items-center justify-content-center flex-column"
+        >
+            <div
+                class="container-fluid d-flex align-items-center justify-content-center"
+            >
+                <div
+                    class="container-lg d-flex align-items-center justify-content-center"
+                >
+                    <img
+                        class="my-hero-image"
+                        src="../public/assets/images/skull.png"
+                        alt=""
+                        style="width: 30%"
+                    />
+                    <div class="text-area">
+                        <h3>want to stay in touch?</h3>
+                        <h1>newsletter subscribe</h1>
+                        <p>
+                            In order to start receiving our news, all you have
+                            to do is enter your email address. Everything else
+                            will be taken care of by us. We will send you emails
+                            containing information about game. We don’t spam.
+                        </p>
+
+                        <a href="#" class="mail btn fw-bold btn-lg text-start"
+                            ><span class="my-text-grey my-text-sub"
+                                >Your email address</span
+                            >
+                            <br />
+                            <span class="my-text-orange"
+                                >youremail@binar.co.id</span
+                            ></a
+                        >
+                        <a href="#" class="subs btn fw-bold btn-lg subs"
+                            >Subscribe now</a
+                        >
+                    </div>
+                </div>
+            </div>
+            <footer style="width: 80%">
+                <div class="menu">
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Main</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Game Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"
+                                >Systems Requirements</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Quotes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"
+                                ><img
+                                    src="../public/assets/images/facebook.svg"
+                                    alt=""
+                            /></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"
+                                ><img
+                                    src="../public/assets/images/twitter.svg"
+                                    alt=""
+                            /></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"
+                                ><img
+                                    src="../public/assets/images/vector.svg"
+                                    alt=""
+                            /></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"
+                                ><img
+                                    src="../public/assets/images/twitch.svg"
+                                    alt=""
+                            /></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="copyrights container">
+                    <div class="row">
+                        <div class="col-md">
+                            <p class="my-text-sub my-text-grey">
+                                © 2018 Your Games, Inc. All Rights Reserved
+                            </p>
+                        </div>
+                        <div class="col-md">
+                            <p class="my-text-sub text-end">
+                                Privacy Policy | Terms of Services | Code of
+                                Conduct
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+        <!-- ! end subscribe section -->
+
+        <%- include('partials/script') %>
+    </body>
+</html>

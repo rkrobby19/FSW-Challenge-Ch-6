@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %> 
+<body>
+    <section id="rock-paper-scissor" class="rock-paper-scissorr">
+        <!-- * Header -->
+        <nav class="d-flex align-items-center">
+            <div class="flex-shrink-0 ms-3 back">
+                <a href="/"><h1 class="back text-uppercase">&lt;</h1></a>
+            </div>
+            <div class="flex-shrink-0 ms-3">
+                <img
+                    src="../public/assets/images/logo.png"
+                    style="width: 77px"
+                    alt="..."
+                />
+            </div>
+            <div class="flex-grow-1 ms-3">
+                <h1 class="tittle text-uppercase">Rock Paper Scissor</h1>
+            </div>
+        </nav>
+        <!-- * Header End-->
+
+        <!-- * Game Content -->
+        <div class="container d-flex flex-column">
+            <div class="row align-items-center justify-content-center">
+                <div
+                    class="player-area col-8 col-md-3 d-flex flex-column align-items-center"
+                >
+                    <h1 class="text-uppercase">Player 1</h1>
+                    <button
+                        id="batu"
+                        class="d-flex align-items-center justify-content-center"
+                    >
+                        <img src="../public/assets/images/batu.png" alt="" />
+                    </button>
+                    <button
+                        id="kertas"
+                        class="d-flex align-items-center justify-content-center"
+                    >
+                        <img src="../public/assets/images/kertas.png" alt="" />
+                    </button>
+                    <button
+                        id="gunting"
+                        class="d-flex align-items-center justify-content-center"
+                    >
+                        <img src="../public/assets/images/gunting.png" alt="" />
+                    </button>
+                </div>
+                <div
+                    id="result"
+                    class="text-area col-8 col-md-3 text-center"
+                >
+                    <p class="hasil vs">VS</p>
+                </div>
+                <div
+                    class="com-area col-8 col-md-3 d-flex flex-column align-items-center"
+                >
+                    <h1 class="text-uppercase">Com</h1>
+                        <button
+                            id="com-batu"
+                            class="d-flex align-items-center justify-content-center"
+                        >
+                            <img src="../public/assets/images/batu.png" alt="" />
+                        </button>
+                        <button
+                            id="com-kertas"
+                            class="d-flex align-items-center justify-content-center"
+                        >
+                            <img src="../public/assets/images/kertas.png" alt="" />
+                        </butt>
+                        <button
+                            id="com-gunting"
+                            class="d-flex align-items-center justify-content-center"
+                        >
+                            <img src="../public/assets/images/gunting.png" alt="" />
+                        </button>
+                    
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col">
+                    <img
+                        id="refresh"
+                        src="../public/assets/images/refresh.png"
+                        style="width: 77px"
+                        alt=""
+                    />
+                </div>
+            </div>
+        </div>
+        <!-- * Game Content End-->
+    </section>
+    
+    <%- include('partials/script') %> 
+</body>
+</html>
