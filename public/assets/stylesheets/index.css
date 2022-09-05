@@ -1,0 +1,462 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;700&display=swap");
+
+/* ! typography */
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    color: white;
+}
+h1,
+h2,
+h3 {
+    font-family: "Bebas Neue", cursive;
+}
+h1 {
+    font-size: 56px;
+}
+h3 {
+    font-size: 24px;
+}
+.my-text-sub {
+    font-size: 14px;
+}
+.my-text-btn {
+    font-size: 16px;
+}
+.my-text-nav {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.my-text-grey {
+    color: rgba(255, 255, 255, 0.5);
+}
+.my-text-orange {
+    color: #ffb548;
+}
+section {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* ! main cta section */
+section.main-cta {
+    background-image: url(../images/main-bg.jpg);
+}
+/* * navbar */
+nav {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+nav .logo {
+    font-size: 24px;
+    letter-spacing: 10%;
+    margin-left: 10%;
+}
+.my-nav-menu ul li a,
+.my-sign-menu ul li a {
+    margin-right: 20px;
+}
+/* * main */
+.main-cta main {
+    width: 80%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.main-cta .text-area {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.main-cta .text-area h1 {
+    font-size: 72px;
+    letter-spacing: 16px;
+    margin: auto;
+    width: 100%;
+}
+.main-cta .text-area h3 {
+    margin: 40px auto;
+    letter-spacing: 4px;
+    font-weight: normal;
+}
+.main-cta .text-area button {
+    background-color: #ffb548;
+    padding: 15px 70px;
+}
+.main-cta .text-area button a {
+    text-decoration: none;
+    color: white;
+}
+/* * footer */
+.main-cta footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.main-cta footer p {
+    margin-bottom: 30px;
+}
+/* * media query */
+@media (max-width: 980px) {
+    .main-cta .text-area h1 {
+        font-size: 56px;
+        letter-spacing: 4px;
+    }
+    .main-cta .text-area h3 {
+        letter-spacing: 1px;
+    }
+}
+/* ! end main cta section */
+
+/* ! about-gallery section */
+section.about-gallery-options {
+    background-image: url(../images/the-games-bg.jpg);
+}
+/* * text area */
+.about-gallery-options .text-area h1 {
+    margin: auto;
+    letter-spacing: 12px;
+}
+.about-gallery-options .text-area h3 {
+    margin: 5px auto;
+    letter-spacing: 3px;
+}
+/* * carousel */
+.carousel-container {
+    width: 90%;
+}
+.my-switch-left {
+    left: -10%;
+}
+.my-switch-right {
+    right: -10%;
+}
+.my-switch-right img,
+.my-switch-left img {
+    width: 15%;
+}
+.carousel-indicators [data-bs-target] {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 0 5%;
+}
+/* * media query */
+@media (max-width: 980px) {
+    .about-gallery-options .text-area h3,
+    .about-gallery-options .text-area h1 {
+        text-align: center;
+    }
+    .carousel-indicators {
+        top: 100%;
+    }
+    .carousel-indicators [data-bs-target] {
+        width: 10px;
+        height: 10px;
+    }
+}
+/* ! end about-gallery section */
+
+/* ! features section */
+section.features {
+    background-image: url(../images/features.jpg);
+}
+.features main {
+    width: 30%;
+    position: relative;
+    top: 50%;
+    left: 55%;
+    -ms-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+}
+.features h3 {
+    letter-spacing: 2px;
+}
+.features h1 {
+    letter-spacing: 10px;
+}
+.feature-area {
+    width: 100%;
+}
+.feature-area img {
+    position: relative;
+    left: -5%;
+}
+.feature-area p {
+    line-height: 22px;
+    right: -5%;
+    position: relative;
+}
+
+/* * accordion */
+.accordion {
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+.accordion:hover {
+    background-color: rgba(156, 156, 156, 0.5);
+}
+.panel {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+}
+/* * media query */
+@media (max-width: 980px) {
+    .features main {
+        width: 60%;
+        left: 40%;
+        -ms-transform: translate(-25%, -50%);
+        transform: translate(-25%, -50%);
+    }
+    .features h3 {
+        letter-spacing: 1px;
+    }
+    .features h1 {
+        letter-spacing: 5px;
+    }
+}
+/* ! end features section */
+
+/* ! syst req section */
+section.syst-req {
+    background-image: url(../images/requirements.png);
+}
+h3 {
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+.syst-req h1 {
+    letter-spacing: 16px;
+}
+/* * table container */
+.syst-req .table-container {
+    width: 50%;
+    margin-top: 4%;
+}
+.table-container .table h3 {
+    color: #ffb548;
+    text-align: left;
+    letter-spacing: 2px;
+}
+.table-container .table p {
+    color: white;
+    letter-spacing: 2px;
+}
+/* * media query */
+@media (max-width: 980px) {
+    .syst-req .table-container {
+        width: 80%;
+    }
+    .syst-req .container-lg {
+        padding: 2rem;
+    }
+    h3.text-center {
+        letter-spacing: 1px;
+    }
+    .syst-req h1 {
+        letter-spacing: 4px;
+    }
+}
+@media (max-width: 380px) {
+    section.syst-req {
+        height: 100%;
+    }
+    .syst-req h1 {
+        letter-spacing: 1px;
+    }
+}
+/* ! end syst req section */
+
+/* ! quotes section */
+section.press-quotes {
+    background-image: url(../images/top-score-bg.png);
+}
+.press-quotes h1 {
+    letter-spacing: 12px;
+}
+.press-quotes .text-area {
+    width: 65%;
+}
+/* * card */
+.card {
+    background-color: rgba(255, 255, 255, 0.08);
+    width: 450px;
+    /* TODO: white layout error */
+    margin: 1rem;
+    padding: 1rem;
+}
+.card.c-one {
+    position: relative;
+    left: 22%;
+}
+.card.c-two {
+    position: relative;
+    left: 18%;
+}
+.card .header {
+    margin-bottom: 1.5rem;
+}
+.img-container img {
+    width: 65px;
+    box-shadow: 8px 4px 2px 2px #ffb548;
+    border-radius: 50%;
+}
+h3.name {
+    font-size: 24px;
+    margin-bottom: 0;
+}
+p.date {
+    margin-bottom: 0;
+}
+.press-quotes button {
+    background-color: #ffb548;
+    padding: 15px 85px;
+}
+
+/* * media query */
+@media (max-width: 980px) {
+    .press-quotes .container-lg {
+        padding: 1.5rem;
+    }
+    .press-quotes .text-area {
+        width: 100%;
+    }
+    .card {
+        width: 100%;
+        margin-left: 0;
+    }
+    .card.c-one {
+        position: relative;
+        left: 0;
+    }
+    .card.c-two {
+        position: relative;
+        left: 0;
+    }
+}
+@media (max-width: 580px) {
+    .press-quotes h1 {
+        letter-spacing: 4px;
+    }
+    .press-quotes {
+        height: 100%;
+    }
+    .press-quotes button {
+        background-color: #ffb548;
+        padding: 10px 40px;
+    }
+}
+/* ! end quotes section */
+
+/* ! subscribe section */
+section.subscribe {
+    background-image: url(../images/newsletter.png);
+}
+section.subscribe .container-fluid {
+    height: 100vh;
+}
+.subscribe h3 {
+    letter-spacing: 4px;
+}
+.subscribe h1 {
+    letter-spacing: 16px;
+}
+.subscribe .my-hero-image {
+    position: relative;
+    left: 5%;
+}
+.subscribe .text-area {
+    width: 50%;
+    z-index: 1;
+    margin-left: 10%;
+}
+/* * button */
+.mail {
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 2px 70px;
+    margin-right: 1%;
+    margin-bottom: 2%;
+}
+.subs {
+    background-color: #ffb548;
+    padding: 16px 40px;
+    margin-bottom: 2%;
+}
+/* TODO: find image mask */
+/* * footer */
+.subscribe footer .menu .nav li a {
+    color: white;
+    margin: 0 0.5rem;
+}
+.subscribe footer .menu .nav li:nth-child(5) {
+    margin-right: 20px;
+}
+.subscribe footer .menu .nav li:last-child {
+    margin-right: 0;
+}
+.copyrights {
+    border-top: 1px solid white;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+/* * media query */
+@media (max-width: 580px) {
+    .subscribe h3 {
+        letter-spacing: 1px;
+    }
+    .subscribe h1 {
+        letter-spacing: 4px;
+    }
+    .subscribe .text-area {
+        width: 80%;
+        position: relative;
+        left: -20%;
+    }
+    .mail {
+        padding: 2px 40px;
+    }
+    .subs {
+        padding: 16px 40px;
+    }
+}
+@media (max-width: 380px) {
+    .subscribe {
+        height: 100%;
+    }
+    section.subscribe .container-fluid {
+        height: 100%;
+    }
+    .subscribe .container-lg {
+        margin: 2rem;
+    }
+    .subscribe .text-area {
+        width: 80%;
+        position: relative;
+        left: -25%;
+    }
+    .subscribe h1 {
+        font-size: 40px;
+    }
+    .mail {
+        padding: 2px 15px;
+    }
+    .subs {
+        padding: 8px 10px;
+    }
+}
+/* ! end subscribe section */

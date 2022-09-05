@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+    <body>
+        <div class="container rounded bg-white mt-5 mb-5">
+            <div class="row">
+                <div class="col-md-4 border-right">
+                    <div
+                        class="d-flex flex-column align-items-center text-center p-3 py-5"
+                    >
+                        <img
+                            class="rounded-circle mt-5"
+                            width="150px"
+                            src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
+                        /><span class="font-weight-bold"
+                            ><%= userData.userName %></span
+                        ><span class="text-black-50"><%= userData.email %></span
+                        ><span> </span>
+                    </div>
+                </div>
+                <div class="col-md-7 border-right">
+                    <div class="p-3 py-5">
+                        <div
+                            class="d-flex justify-content-between align-items-center mb-3"
+                        >
+                            <h4 class="text-right">Edit User Profile</h4>
+                        </div>
+                        <div class="row mt-3">
+                            <form>
+                                <!-- Form Group (username)-->
+                                <div class="mb-3">
+                                    <label
+                                        class="small mb-1"
+                                        for="inputUsername"
+                                        >Username</label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        id="inputUsername"
+                                        type="text"
+                                        placeholder="Enter your username"
+                                        name="username"
+                                        value="<%= userData.userName %>"
+                                        disabled
+                                    />
+                                </div>
+                                <!-- Form Row-->
+                                <div class="row gx-3 mb-3">
+                                    <!-- Form Group (first name)-->
+                                    <div class="col-md-6">
+                                        <label
+                                            class="small mb-1"
+                                            for="inputFirstName"
+                                            >First name</label
+                                        >
+                                        <input
+                                            class="form-control"
+                                            id="inputFirstName"
+                                            type="text"
+                                            placeholder="Enter your first name"
+                                            name="firstName"
+                                            value="<%= userBiodata.firstName %>"
+                                        />
+                                    </div>
+                                    <!-- Form Group (last name)-->
+                                    <div class="col-md-6">
+                                        <label
+                                            class="small mb-1"
+                                            for="inputLastName"
+                                            >Last name</label
+                                        >
+                                        <input
+                                            class="form-control"
+                                            id="inputLastName"
+                                            type="text"
+                                            placeholder="Enter your last name"
+                                            name="lastName"
+                                            value="<%= userBiodata.lastName %>"
+                                        />
+                                    </div>
+                                </div>
+                                <!-- Form Row        -->
+                                <div class="row gx-3 mb-3">
+                                    <!-- Form Group (birthday)-->
+                                    <div class="col-md-6">
+                                        <label
+                                            class="small mb-1"
+                                            for="inputBirthday"
+                                            >Birthday</label
+                                        >
+                                        <input
+                                            class="form-control"
+                                            id="inputBirthday"
+                                            type="text"
+                                            name="birthday"
+                                            placeholder="yyyy-mm-dd"
+                                            value="<%= userBiodata.birthday %>"
+                                        />
+                                    </div>
+                                    <!-- Form Group (location)-->
+                                    <div class="col-md-6">
+                                        <label
+                                            class="small mb-1"
+                                            for="inputLocation"
+                                            >Place of Birth</label
+                                        >
+                                        <input
+                                            class="form-control"
+                                            id="inputLocation"
+                                            type="text"
+                                            placeholder="San Francisco, CA"
+                                            name="location"
+                                            value="<%= userBiodata.location %>"
+                                        />
+                                    </div>
+                                </div>
+
+                                <!-- Form Row-->
+                                <div class="row gx-3 mb-3">
+                                    <!-- Form Group (email)-->
+                                    <div class="col-md-6">
+                                        <label
+                                            class="small mb-1"
+                                            for="inputEmail"
+                                            >Email Address</label
+                                        >
+                                        <input
+                                            class="form-control"
+                                            id="inputEmail"
+                                            type="email"
+                                            placeholder="name@example.com"
+                                            value="<%= userData.email %>"
+                                            disabled
+                                        />
+                                    </div>
+                                    <!-- Form Group (gender)-->
+                                    <div class="col-md-6">
+                                        <label
+                                            class="small mb-1"
+                                            for="inputGender"
+                                            >Gender</label
+                                        >
+                                        <input
+                                            class="form-control"
+                                            id="inputGender"
+                                            type="text"
+                                            name="gender"
+                                            placeholder="Male/Female"
+                                            value="<%= userBiodata.gender %>"
+                                        />
+                                    </div>
+                                </div>
+                                <!-- Form Group (phone)-->
+                                <div class="mb-3">
+                                    <label class="small mb-1" for="inputPhone"
+                                        >Phone Number</label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        id="inputPhone"
+                                        type="text"
+                                        placeholder="085xxxxxxxxx"
+                                        name="phone"
+                                        value="<%= userBiodata.phone %>"
+                                    />
+                                </div>
+                                <!-- Form Group (password)-->
+                                <div class="mb-3">
+                                    <label
+                                        class="small mb-1"
+                                        for="inputPassword"
+                                        >Password</label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        id="inputPassword"
+                                        type="password"
+                                        placeholder="Enter your password"
+                                        name="password"
+                                        value="<%= userData.password %>"
+                                        disabled
+                                    />
+                                </div>
+                                <div class="mt-5 text-center">
+                                    <button
+                                        class="btn btn-primary profile-button"
+                                        type="button"
+                                        onclick="editUserProfile(<%= userData.id %>)"
+                                    >
+                                        Save Profile
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%- include('partials/script') %>
+    </body>
+</html>
